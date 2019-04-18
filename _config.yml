@@ -1,9 +1,9 @@
 # main text of home
-name: Piyush Agrawal
-bio: A lazy person on a mission to make things easy
+name: Archit Gupta
+bio: An analytical being in this not so analytical world
 
 # twitter summary info
-description: A personal blog. I write about my experiences and tech stuff
+description: A gateway to my inner-self
 
 # if it's an external image, update below for true
 # better with square images
@@ -34,27 +34,27 @@ disqus:
   categories: [blog, project] # only show disqus for posts that have these categories
 
 # if you don't have any of social below, comment the line
-facebook: mepiyush97
-twitter: mepoush
+facebook: archit.gupta33
+# twitter: mepoush
 # google: mygoogle
 # instagram: myinstagram
 # pinterest: mypinterest
-linkedin: poush
+linkedin: archit-gupta-939275121
 # youtube: myyoutube
 # spotify: myspotify
-github: poush
+github: architgupta33
 # lastfm: mylastfm
-stackoverflow: 2686338/poush
+# stackoverflow: 2686338/poush
 # quora: userquora
 # reddit: username
 # medium: 
 # vimeo: myvimeo
-email: me@ipiyush.com
+email: archit.gupta33@gmail.com
 
 authors:
-    poush:
-        name: Piyush Agrawal
-        bio: A lazy person on a mission to make things easy
+    Archit:
+        name: Archit Gupta
+        bio: An analytical being in this not so analytical world
         external-image: false
         picture: assets/images/profile.jpeg
         twitter: mepoush
