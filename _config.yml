@@ -1,13 +1,13 @@
 # main text of home
 name: Archit Gupta
-bio: An analytical being in this not so analytical world
+bio: An analytical being in a not so analytical world
 
 # twitter summary info
 description: A gateway to my inner-self
 
 # if it's an external image, update below for true
 # better with square images
-external-image: false
+external-image: true
 picture: assets/images/Archit_Casual.jpg
 
 # If you want to include your resume, set to true
