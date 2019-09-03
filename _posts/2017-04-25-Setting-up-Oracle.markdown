@@ -10,7 +10,7 @@ tag:
 - express
 - windows
 star: true
-author: poush
+author: archit
 ---
 
 A short simple guide to set up oracle database 11g on your windows system.
