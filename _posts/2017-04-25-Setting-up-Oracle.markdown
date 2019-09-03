@@ -19,7 +19,7 @@ A short simple guide to set up oracle database 11g on your windows system.
 Go to this [page](http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html) to get download links 
 
 
-Choose *x64* if you have 64bit system or *x32* for 32bit system. If you are not sure just select *x32* one. 
+Choose *x64* you have 64bit system or *x32* for 32bit system. If you are not sure just select *x32* one. 
 
 You will be required to signup and login to download this
  ![Signin](https://www.dropbox.com/s/lo2fjnqbbd9y5so/Capture-2.PNG?dl=1)
