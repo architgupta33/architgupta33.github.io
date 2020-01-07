@@ -64,6 +64,8 @@ Moving on, we plotted the interaction of average of Monthly income with level of
 
 Next, we investigated % hike and divided that among Male-Female. As witnessed from the graph, lower the % hike, higher is the attrition. But there is no considerable difference in the ratio of Attrition when we differentiate amongst male female which indicates that Gender might not be a strong factor for determining Attrition. 
 
+![Attrition Distribution](https://github.com/architgupta33/architgupta33.github.io/blob/master/assets/images/1.png)
+
 ## 4. Exploratory Data Analysis 
 
 ## 4. Exploratory Data Analysis 
