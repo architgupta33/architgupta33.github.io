@@ -13,8 +13,6 @@ star: true
 author: archit
 ---
 
-A short simple guide to set up oracle database 11g on your windows system.
-
 ## 1. Introduction & Business Understanding 
 Go to this [page](https://www.kaggle.com/pavansubhasht/ibm-hr-analytics-attrition-dataset) to download 'IBM Attrition Dataset'
 
@@ -48,5 +46,26 @@ Because our target variable is a categorical one (Yes/No), scatterplots essentia
 Now after this you can directly use SQL commands or if you prefer, create new user to use.
 
 ![SQL Command Line Usage](https://www.dropbox.com/s/oj28p2wp6gw0r9r/Capture-9.PNG?dl=1)
+
+### 1. Attrition Distribution On the Basis of Personal Background 
+
+First, we explore the attrition distribution based on personal information. There are 237 employees who left the company, which amounts to 16.1% of the total sample. This quite high as compared to the industry standard of 10% (anything above it is considered problematic).  
+The age distribution of people who left the company concentrates on people that are between 25-35 years old. As the age goes up, people show less tendency to leave the company. There is no major difference of the attrition distribution between females and males. According to the department distribution, it shows that employees from the R&D and Sales department have higher chances to leave the company. 
+
+### 2. Attrition Distribution on the Basis of Income  
+
+Salary is the most (or at least one of the most) motivating factors for an employee. We start our analysis with Monthly Income.
+
+As witnessed from the boxplot, the average monthly income stands at around $6500 and the maximum value goes till $20000. There are some outliers but we’ll keep them untouched as people do earn (or are at least capable of earning) that kind of money.  
+
+Next, we further our visualization by plotting a histogram of Monthly income dividing between gender. We suspected that there might be a difference in attrition between male and female when salary is equal, but as evident from the graph, this is clearly not the case. The attrition is highest when the employee is earning in the range of $1000-$7000, which is expected of the range in question. 
+
+Moving on, we plotted the interaction of average of Monthly income with level of Education. As suspected, people who left the company had lower average income across all education levels as compared to people who didn’t leave the company. This directly points out to the importance of salary in Attrition. 
+
+Next, we investigated % hike and divided that among Male-Female. As witnessed from the graph, lower the % hike, higher is the attrition. But there is no considerable difference in the ratio of Attrition when we differentiate amongst male female which indicates that Gender might not be a strong factor for determining Attrition. 
+
+## 4. Exploratory Data Analysis 
+
+## 4. Exploratory Data Analysis 
 
 *This post is inspired from the questions of my batchmates so major credits goes to them*
