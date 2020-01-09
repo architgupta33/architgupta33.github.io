@@ -1,108 +1,14 @@
 ---
-title: Generating Ticket PDFs in Open Event API Server
+title: Who Transferred My Data? A whitepaper on Free-flowing nature of data
 layout: post
-author: poush
+author: Archit
 permalink: /generating-ticket-pdfs-in-open-event-api-server/
 tags:
-- python, flask, fossasia, gsoc, open-event, api server, html, pdf, xhtml2pdf, send tickets
+- Data Ethics, Whitepaper, Big Corporations, Data as Commodity
 source-id: 1SxFw8p8bBl2YJtoQa9n9lZt5sDiYdwiJ4WSyLu9v53s
 published: true
 ---
-![image alt text]({{ site.url }}/public/rvHPVxaNuPA2Zs7PARrg_img_0.png)
 
-Generating Ticket PDFs in Open Event API Server
-
-In the ordering system of [Open Event API Server](https://github.com/fossasia/open-event-orga-server), there is requirement to send email notifications to the attendees. These attendees receives the url of the pdf of generated ticket. On creating the order, first the pdfs are generated and stored in the preferred storage location and then these are sent to the users through the email.
-
-Generating PDF is a simple process, using **[xhtml2pd**f](https://github.com/xhtml2pdf/xhtml2pdf)** **we can generate PDFs from the html. The generated pdf is then passed to storage helpers to store it in the desired location and pdf-url is updated in the attendees record.
-
-### Sample PDF
-
-(just the sample ticket of sample event)
-
-![image alt text]({{ site.url }}/public/rvHPVxaNuPA2Zs7PARrg_img_1.png)
-
-### PDF Template
-
-The templates are written in html which are then converted using the module [xhtml2pdf](https://github.com/xhtml2pdf/xhtml2pdf).
-
-To store the templates a new directory was created at * ***_app/templates _**where all html files are stored. Now, The template directory needs to be updated at flask initializing app so that template engine can pick the templates from there. So in app/__init__.py we updated flask initialization with
-
-template_dir = os.path.dirname(__file__) + "/templates"
-
-app = Flask(__name__, static_folder=static_dir, template_folder=template_dir)
-
-This allows the template engine to pick the templates files from this template directory.
-
-### Generating PDFs
-
-Generating PDF is done by rendering the html template first. This html content is then parsed into the pdf
-
-file = open(dest, "wb")
-
-pisa.CreatePDF(cStringIO.StringIO(pdf_data.encode('utf-8')), file)
-
-file.close()
-
-The generated pdf is stored in the temporary location and then passed to storage helper to upload it.
-
-uploaded_file = UploadedFile(dest, filename)
-
-upload_path = UPLOAD_PATHS['pdf']['ticket_attendee'].format(identifier=get_file_name())
-
-new_file = upload(uploaded_file, upload_path)
-
-This generated pdf path is returned here
-
-### Rendering HTML and storing PDF
-
-for holder in order.ticket_holders:
-
-   if holder.id != current_user.id:
-
-       pdf = create_save_pdf(render_template('/pdf/ticket_attendee.html', order=order, holder=holder))
-
-   else:
-
-       pdf = create_save_pdf(render_template('/pdf/ticket_purchaser.html', order=order))
-
-   holder.pdf_url = pdf
-
-   save_to_db(holder)
-
-The html is rendered using flask template engine and passed to **create_save_pdf** and link is updated on the attendee record.
-
-### Sending PDF on email
-
-These pdfs are sent as a link to the email after creating the order. Thus a ticket is sent to each attendee and a summarized order details with attendees to the purchased.
-
-send_email(
-
-   to=holder.email,
-
-   action=TICKET_PURCHASED_ATTENDEE,
-
-   subject=MAILS[TICKET_PURCHASED_ATTENDEE]['subject'].format(
-
-       event_name=order.event.name,
-
-       invoice_id=order.invoice_number
-
-   ),
-
-   html= MAILS[TICKET_PURCHASED_ATTENDEE]['message'].format(
-
-       pdf_url=holder.pdf_url,
-
-       event_name=order.event.name
-
-   )
-
-)
-
-### References
-
-1. Readme - xhtml2pdf[https://github.com/xhtml2pdf/xhtml2pdf/blob/master/README.rst](https://github.com/xhtml2pdf/xhtml2pdf/blob/master/README.rst)
-
-2. Using xhtml2pdf and create pdfs[https://micropyramid.com/blog/generating-pdf-files-in-python-using-xhtml2pdf/](https://micropyramid.com/blog/generating-pdf-files-in-python-using-xhtml2pdf/)
-
+The past decade has witnessed an increased awareness regarding unwarranted flow of data within various organizations. But still these
+organizations are able to get away legally because of lax regulations, without making amends on ethical front. In this whitepaper, we raise
+one such grave ethical issue regarding organizations transferring data that includes personal information without taking consent from concerned individuals. It is a fundamental right to know how information is being put to use as companies are notorious for the way they use data for monetization purposes, while disguising their true intent by claiming to work for the ‘public good’. It is a clear-cut case of deception and we try to debunk this by making use of two case studies and then provide recommendations – first, legally defining the ownership of data to clearly express the corresponding accountability and rights and then, building upon that idea by introducing the concept of treating data as a commodity. By the end of this whitepaper, we hope to make our user aware about the gravity of situation and provide viable solutions to put this grave matter to rest.
