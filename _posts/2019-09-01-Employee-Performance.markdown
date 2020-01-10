@@ -41,7 +41,7 @@ Now after this you can directly use SQL commands or if you prefer, create new us
 
 ### 1. Attrition Distribution On the Basis of Personal Background 
 
-![SQL Command Line Usage](https://github.com/architgupta33/architgupta33.github.io/blob/master/assets/images/1.png)
+![SQL Command Line Usage](/assets/images/1.png)
 
 First, we explore the attrition distribution based on personal information. There are 237 employees who left the company, which amounts to 16.1% of the total sample. This quite high as compared to the industry standard of 10% (anything above it is considered problematic).  
 The age distribution of people who left the company concentrates on people that are between 25-35 years old. As the age goes up, people show less tendency to leave the company. There is no major difference of the attrition distribution between females and males. According to the department distribution, it shows that employees from the R&D and Sales department have higher chances to leave the company. 
@@ -50,7 +50,7 @@ The age distribution of people who left the company concentrates on people that 
 
 Salary is the most (or at least one of the most) motivating factors for an employee. We start our analysis with Monthly Income.
 
-![SQL Command Line Usage](https://github.com/architgupta33/architgupta33.github.io/blob/master/assets/images/3.png)
+![SQL Command Line Usage](/assets/images/3.png)
 
 As witnessed from the boxplot, the average monthly income stands at around $6500 and the maximum value goes till $20000. There are some outliers but we’ll keep them untouched as people do earn (or are at least capable of earning) that kind of money.  
 
@@ -66,7 +66,7 @@ After running some preliminary visualization analysis, we ran logistic regressio
 
 ### On the Basis of Category ‘Personal Background'
 
-![SQL Command Line Usage](https://github.com/architgupta33/architgupta33.github.io/blob/master/assets/images/4.png)
+![SQL Command Line Usage](/assets/images/4.png)
 
 From the result, we can see that age, education field, job level and marital status are significantly correlated with the attrition, and the AIC for this model is 1176.4. Elder people tend to stay in the company. Compared to divorced people, married and single people are prone to leave the company.  However, even though ‘Job Role’ is not significantly correlated with attrition, the p-value of ‘Research Director’ is very close to 0.05. If we include ‘Job Role’ and other significant variables and run logistic regression again, the AIC will decrease to 1166.5, lower than excluding it. Therefore, ‘Job Role’ is kept for further analysis. 
 
@@ -74,13 +74,13 @@ From the result, we can see that age, education field, job level and marital sta
 
 We test the correlations among the four variables in this category, and we could not find any significantly strong correlations. (The result is counterintuitive, but this is the fictional data set, and we could not know the algorithm behind hourly, daily, and monthly rate.) Therefore, we include all of them to run the logistic regression.   
 
-![SQL Command Line Usage]https://github.com/architgupta33/architgupta33.github.io/blob/master/assets/images/5.png)
+![SQL Command Line Usage](/assets/images/5.png)
 
 From the result, we can see that only daily rate and monthly rate are significantly correlated with the attrition. For a one-unit increase in the daily rate, the expected change in log odds will decrease by 0.0003753. For a one-unit increase in the monthly income, the expected change in log odds will decrease by 0.0001278. After excluding the insignificant variables, the AIC drops to 1254.6.  
 
 ### On the basis of category ‘Opportunities’
 
-![SQL Command Line Usage](https://github.com/architgupta33/architgupta33.github.io/blob/master/assets/images/6.png)
+![SQL Command Line Usage](/assets/images/6.png)
 
 The insignificant variable in this category is % salary hike and stock option level. Then we only include training times last year and stock option level to run a new logistic regression model, we get a lower AIC value of 1241.1. Therefore, we will exclude % salary hike in further analysis. 
 
@@ -88,7 +88,7 @@ The insignificant variable in this category is % salary hike and stock option le
 
 Under this category, we explored variables such as Years at Company, Years in Current Role etc.   
 
-![SQL Command Line Usage](https://github.com/architgupta33/architgupta33.github.io/blob/master/assets/images/7.png)
+![SQL Command Line Usage](/assets/images/7.png)
 
 As observable from the results, every variable apart from Performance Rating is significant. People who spend more years at the company are prone to leave the company. Also, a unit increase in Years since last promotion would result in an increase of 0.13 in log odds of Attrition happening, given everything else is held constant.  
 
@@ -98,7 +98,7 @@ But an increment in Years in current role would decrease the chances of an emplo
 
 We considered variables like Business Travel, Job Involvement etc. in our logit model. The results came out as follows : 
  
-![SQL Command Line Usage](https://github.com/architgupta33/architgupta33.github.io/blob/master/assets/images/8.png)
+![SQL Command Line Usage](/assets/images/8.png)
  
 As observable from the results, Employees who travel rarely and frequently are more prone to leave their organizations. The log odds of leaving the organization with regards to a person who travels rarely increases by 0.789 as compared to a person who does not. The log odds increase even more so for an employee who travels frequently which is a comprehendible fact as many employees consider travelling a hassle and would rather have a static job.  
 
@@ -108,7 +108,7 @@ Similarly, the log odds of leaving organization with regards to a person working
 
 We considered variables like Job Satisfaction, Relationship Satisfaction etc. under this category – 
 
-![SQL Command Line Usage](https://github.com/architgupta33/architgupta33.github.io/blob/master/assets/images/9.png)
+![SQL Command Line Usage](/assets/images/9.png)
 
 As observable from the results, every variable is significant close to 95% confidence interval except Relationship Satisfaction. People who are more satisfied with their environment and jobs are less likely to change their company and that is abundantly clear from the results table – As the satisfaction level improves in both Job and Environment Satisfaction columns, the log odds of a person leaving the organization improves.  
 
@@ -116,7 +116,7 @@ Similarly, as Work-Life balance improves, so does the desire to stay in the comp
 
 ### Intuitive Model 
 
-![SQL Command Line Usage](https://github.com/architgupta33/architgupta33.github.io/blob/master/assets/images/10.png)
+![SQL Command Line Usage](/assets/images/10.png)
 
 Using our intuition, we chose variables that made sense. Above is a list of all such variables. Using this model, we got an AIC of 966.81. To our surprise, most of the variables showed high significance with respect to Attrition except Education, Marital Status, Monthly Rate, % Salary Hike & Years At Company. 
 
@@ -124,11 +124,11 @@ Using our intuition, we chose variables that made sense. Above is a list of all 
 
 The model below combines all the significant independent variables from all the six categories. The results we got are not that shocking as columns like Job Involvement, Overtime, Distance from home made the cut and are highly significant.  The approach we used seems to have done the job pretty as we were able to bring down a total of 34 variables to 22 variables. A majority of these variables are negatively correlated negatively with our target variable, Attrition. It means the higher these variables get in magnitude, the lower is the chance of Attrition (given everything else is held constant). The final AIC comes out to be 900.81. 
 
-![SQL Command Line Usage](https://github.com/architgupta33/architgupta33.github.io/blob/master/assets/images/11.png)
+![SQL Command Line Usage](/assets/images/11.png)
 
 ## 6. Evaluation  
 
-![SQL Command Line Usage](https://github.com/architgupta33/architgupta33.github.io/blob/master/assets/images/12.png)
+![SQL Command Line Usage](/assets/images/12.png)
 
 In the end, we have come up with eight models with different AIC’s. The model with the lowest AIC is indeed the one which we built using the most significant variables out of the original six categories. The most significant variables in this model are the one which actually matter when we talk about Attrition; these are :   
 
