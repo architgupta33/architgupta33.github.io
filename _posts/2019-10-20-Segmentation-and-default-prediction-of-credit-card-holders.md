@@ -22,7 +22,7 @@ There are 30,000 observations and 25 variables
  
 We divided the variables into two categories: 
 
-[Category](https://github.com/architgupta33/architgupta33.github.io/blob/master/assets/images/13.png)
+[Category](/assets/images/13.png)
 
 Credit limit is decided by the bank based on many factors, usually including the income of the customer. So, we include it in the demographic characteristics.  
 
@@ -40,13 +40,13 @@ As a first step, we wanted to ascertain whether people went overboard their resp
 
 Next, we explored the correlation among variables. We draw correlation plots for continuous variables and categorical variables respectively. There exists significant correlation within bill statements and payment status for each month. Since our target variable here is binary variable, to examine its correlation with categorical variables, we also draw mosaic plot to see the correlation between demographical variables and default. 
 
-[Category](https://github.com/architgupta33/architgupta33.github.io/blob/master/assets/images/13.png)
+[Category](/assets/images/13.png)
 
 The colors in mosaic plot represent the level of the residual for that cell / combination of levels. More specifically, blue means there are more observations in that cell than would be expected under the null model (independence). Red means there are fewer observations than would have been expected. Here, the null model assumes that the default is independent from  
 
 marital status and sex. According to the mosaic plot, the default among married males exceeds the expectation of null model, while the default of married females is below the expectation. Besides, the non-default behaviors among married males are also significantly below expectation.  
 
-[Category](https://github.com/architgupta33/architgupta33.github.io/blob/master/assets/images/14.png)
+[Category](/assets/images/14.png)
 
 ## 5. Customer Segmentation 
 
@@ -64,11 +64,11 @@ Being unaware about the bigger picture showcased by the dataset, we had to take 
 
 As per the second graph shown above, the highest drop in dindex value occurs while transitioning from 2 clusters to 3 clusters. Therefore, we concluded that 3 is the optimum number of clusters. 
 
-[Category](https://github.com/architgupta33/architgupta33.github.io/blob/master/assets/images/13.png)
+[Category](/assets/images/13.png)
 
 ### Applying K-means clustering 
 
-[Category](https://github.com/architgupta33/architgupta33.github.io/blob/master/assets/images/14.png)
+[Category](/assets/images/14.png)
 
 After finding out 3 as the optimal value, we made use of ‘kmeans’ library to differentiate each record into one out of three clusters. As a result, we were able to divide each customer on the basis of his/her demographic information.  
 
@@ -85,7 +85,7 @@ The limit balance in this cluster typically stood in the range of $0 to $8k. Als
 #### C) Cluster 3 (Green in color): 8271 records. 
 The limit balance in this cluster typically stood in the range of $0 to $12k. Also, the customers are bit on the older spectrum in this cluster. 
 
-[Category](https://github.com/architgupta33/architgupta33.github.io/blob/master/assets/images/15.png)
+[Category](/assets/images/15.png)
 
 ## 6. Modeling 
 
@@ -113,7 +113,7 @@ We chose the threshold at 0.3 because of the heavy loss the bank will incur if F
 
 ### Stepwise Logistic Regression: Accuracy = 84.87% 
 
-[Category](https://github.com/architgupta33/architgupta33.github.io/blob/master/assets/images/16.png)
+[Category](/assets/images/16.png)
 
 ### Random Forest: Accuracy = 77.24% 
 
@@ -131,7 +131,7 @@ Once a credit card was issued to a customer, the bank need to closely monitor th
 
 ### Decisions based on Classification : 
 
-[Category](https://github.com/architgupta33/architgupta33.github.io/blob/master/assets/images/17.png)
+[Category](/assets/images/17.png)
 
 ### The Expected value of decisions:  
 
