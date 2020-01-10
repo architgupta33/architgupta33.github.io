@@ -31,7 +31,7 @@ For education: 1 = Below College 2 = College 3 = Bachelor  4 = Master  5 = Docto
 
 We used the “MICE” package to whether or not there are NULL values in the dataset. The test revealed there are none. After studying the structure, we found 3 columns ('Over18', 'EmployeeCount', and 'Standard Hours') that are constant in nature. These columns were dropped from our analysis. We excluded the column ‘EmployeeNumber’ as well, because it doesn’t add value. Finally, based on the data type of the remaining 30 variables (excluding the target variable), we classify them into 6 categories as listed below: 
 
-![SQL Command Line Usage](public/assets/images/2.png)
+![SQL Command Line Usage](/assets/images/2.png)
 
 ## 4. Exploratory Data Analysis 
 
